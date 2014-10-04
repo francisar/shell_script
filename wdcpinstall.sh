@@ -168,6 +168,13 @@ if [ $1 = "install" ];then
 		printf "check disk failed\n"
 		exit 1;
 	else
-		printf "install in %s\n" $DEFAULTE_DATADISK
+		#printf "install in %s\n" $DEFAULTE_DATADISK
+		install_wdcp $DEFAULTE_DATADISK
+		if [ $? -ne 0 ];then
+			printf "install failed\n"
+			exit 1;
+		fi
+		printf "install success\n"
+		return 0
 	fi
 fi
