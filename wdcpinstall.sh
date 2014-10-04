@@ -1,16 +1,14 @@
 #!/bin/bash 
-
+DEFAULTE_DATADISK=/data
+MIRRORS=mirrors.tencentyun.com
+usage()
+{
 if [ $# != 1 ] ; then 
 echo "USAGE: $0 {command}" 
 echo " e.g.: $0 install" 
 exit 1; 
 fi
-if [ $UID != 0 ]; then
-    echo "You must be root to run the install script."
-    exit 1;
-fi
-DEFAULTE_DATADISK=/data
-MIRRORS=mirrors.tencentyun.com
+}
 checkyum()
 {
 	ping=`ping -c 1 $MIRRORS|grep loss|awk '{print $6}'|awk -F "%" '{print $1}'`
@@ -162,6 +160,11 @@ format_disk()
 #echo $result
 
 #echo $vp
+usage
+if [ $UID != 0 ]; then
+    echo "You must be root to run the install script."
+    exit 1;
+fi
 if [ $1 = "install" ];then
 	check_datadisk
 	if [ $? -ne 0 ];then
@@ -175,6 +178,9 @@ if [ $1 = "install" ];then
 			exit 1;
 		fi
 		printf "install success\n"
-		return 0
 	fi
+elif [ $1 = "yumrestore" ];then
+	checkyum
+else 
+	usage
 fi
