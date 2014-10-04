@@ -89,7 +89,7 @@ check_datadisk()
 				return 0
 				#printf "test"
 			else
-				printf "your datadiskpart `fdisk -l 2>  /dev/null|grep "$DATADEV[0-9]."awk '{print $1}'` need to be mounted\n"
+				printf "your datadiskpart `fdisk -l 2>  /dev/null|grep "$DATADEV[0-9]."|awk '{print $1}'` need to be mounted\n"
 				exit 1;
 			fi
 		else
