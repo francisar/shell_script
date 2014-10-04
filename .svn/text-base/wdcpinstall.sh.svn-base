@@ -3,11 +3,8 @@ DEFAULTE_DATADISK=/data
 MIRRORS=mirrors.tencentyun.com
 usage()
 {
-if [ $# != 1 ] ; then 
-echo "USAGE: $0 {command}" 
-echo " e.g.: $0 install" 
-exit 1; 
-fi
+	echo "USAGE: $0 {command}" 
+	echo " e.g.: $0 install" 
 }
 checkyum()
 {
@@ -160,7 +157,10 @@ format_disk()
 #echo $result
 
 #echo $vp
-usage
+if [ $# != 1 ] ; then 
+	usage
+	exit 1; 
+fi
 if [ $UID != 0 ]; then
     echo "You must be root to run the install script."
     exit 1;
