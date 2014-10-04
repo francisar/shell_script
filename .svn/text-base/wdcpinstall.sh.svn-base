@@ -24,7 +24,7 @@ check_virtualplatform()
   # check which OS and ver
   if [ -d /proc/xen/ ];then
     echo xen
-  elif [ `ethtool -i eth0|grep virtio_net|wc -l` -gt 0 ]||[ `lsmod|grep virtio|wc -l` -gt 0 ]||[ -d /sys/module/virtio_net/ ];then
+  elif [ `ethtool -i eth0 2> /dev/null|grep virtio_net|wc -l` -gt 0 ]||[ `lsmod 2> /dev/null|grep virtio|wc -l` -gt 0 ]||[ -d /sys/module/virtio_net/ ];then
     echo kvm
   else
     echo unknown virtualplatform
@@ -145,7 +145,7 @@ format_disk()
 		exit 1;
 	fi
 	mkdir -p /data
-	mount $DISK"1" /data
+	mount $DISK"1" /data -t ext4
 	if [ $? -ne 0 ];then
 		printf "mount failed\n"
 		exit 1;
