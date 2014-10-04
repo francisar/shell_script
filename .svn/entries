@@ -26,6 +26,9 @@ francis
 
 2b99cf31-d14a-41fd-8320-9450fbd07c1e
 
+.git
+dir
+
 README.md
 file
 
@@ -62,14 +65,14 @@ francis
 
 wdcpinstall.sh
 file
-76
+77
 
 
 
-2014-10-04T04:19:12.632944Z
-56343cec68a2373f0a2c4f520a0bfecb
-2014-10-04T04:19:17.992254Z
-76
+2014-10-04T04:22:16.595278Z
+9db61c5e043c8415f34d75157bd057f9
+2014-10-04T04:22:20.392920Z
+77
 francis
 
 
@@ -92,8 +95,5 @@ francis
 
 
 
-4162
-
-.git
-dir
+4160
 
