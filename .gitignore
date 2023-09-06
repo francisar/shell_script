@@ -1,0 +1,37 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Dependency directories
+vendor/
+
+bin/
+bin
+# Config file and certificate
+config/*.pem
+config/*.crt
+config/*.key
+config/app-dev-*
+config/app-dev.yaml
+config/app-test-*
+config/app-prod-*
+google_credential.json
+log
+log/*
+*.log
+# Others
+.swp
+.bak
+.idea/
+build/
+backup/
+public/doc/openapi-spec/api/*
